@@ -60,12 +60,12 @@ Example Playbook
     - hosts: servers
 
       vars:
-        ansible_role_redhat_insights_display_name: somedisplayname
-        ansible_role_redhat_insights_ansible_host: somehostname
-        ansible_role_redhat_insights_enable_malware_scan: True
+        ansible_role_redhat_insights_display_name: testvm
+        ansible_role_redhat_insights_ansible_host: testvm
+        ansible_role_redhat_insights_malware_scan_enable: True
 
       roles:
-         - ansible_role_linux_update
+         - ansible_role_redhat_insights
 
 License
 -------
