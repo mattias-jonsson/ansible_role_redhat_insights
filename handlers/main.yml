@@ -1,16 +1,16 @@
 ---
 
-- name: Unregister from Red Hat insights.
+- name: Unregister from Red Hat Insights.
   become: true
   command: insights-client --unregister
   listen: "reregister of Red Hat Insights"
 
-- name: Register on Red Hat insights.
+- name: Register on Red Hat Insights.
   become: true
   command: insights-client --register
   listen: "reregister of Red Hat Insights"
 
-- name: Upload data to Red Hat insights.
+- name: Upload data to Red Hat Insights.
   become: true
   command: insights-client
   listen: "reregister of Red Hat Insights"

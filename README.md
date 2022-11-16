@@ -1,9 +1,7 @@
 Ansible Role: ansible_role_redhat_insights
 =========
 
-Handles installation and configuration of Red Hat Insights agent.  
-  
-This role is inspired and also contains the insights_facts file from https://github.com/RedHatInsights/insights-client-role.
+Handles installation and configuration of Red Hat Insights agents. This role is inspired by and also contains the insights.facts file from https://github.com/RedHatInsights/insights-client-role.
 
 Supported distributions:
 
