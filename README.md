@@ -27,7 +27,7 @@ Role Variables
 | `ansible_role_redhat_insights_proxy` | No | | URL for your proxy.  Example: http://user:pass@192.168.100.50:8080. |
 | `ansible_role_redhat_insights_auto_update` | No | True | Automatically update the dynamic configuration. |
 | `ansible_role_redhat_insights_obfuscate` | No | False | Obfuscate IP addresses. |
-| `ansible_role_redhat_insights_obfuscate_hostname` | No | 'False' | Obfuscate hostname. Requires `ansible_role_redhat_insights_obfuscate=True`. |
+| `ansible_role_redhat_insights_obfuscate_hostname` | No | False | Obfuscate hostname. Requires `ansible_role_redhat_insights_obfuscate=True`. |
 | `ansible_role_redhat_insights_display_name` | No | | Display name for registration. |
 | `ansible_role_redhat_insights_ansible_host` | No | | Ansible hostname for this system. |
 | `ansible_role_redhat_insights_cmd_timeout` | No | 120 | Timeout for commands run during collection, in seconds. |
@@ -48,7 +48,7 @@ Example Playbook
       vars:
         ansible_role_redhat_insights_display_name: somedisplayname
         ansible_role_redhat_insights_ansible_host: somehostname
-        ansible_role_redhat_insights_enable_malware_scan: 'True
+        ansible_role_redhat_insights_enable_malware_scan: True
 
       roles:
          - ansible_role_linux_update
