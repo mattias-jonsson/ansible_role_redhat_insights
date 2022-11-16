@@ -28,3 +28,8 @@
 
 - include_tasks: install.yml
 - include_tasks: configure.yml
+
+# - name: Performs a compliance scan and upload result to Red Hat Insights.
+#   become: true
+#   command: insights-client --compliance
+#   when: ansible_role_redhat_insights_compliance_enable

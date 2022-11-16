@@ -52,6 +52,8 @@ Role Variables
 | `ansible_role_redhat_insights_malware_scan_scan_timeout` | No | 3600 | Abort a particular scan if it takes longer than scan_timeout seconds. |
 | `ansible_role_redhat_insights_malware_scan_nice_value` | No | 19 | Run the yara process with this nice priority value.  Default is 19 (lowest priority). |
 | `ansible_role_redhat_insights_malware_scan_cpu_thread_limit` | No | | The max number of CPUs threads used by yara when scanning. Autodetected. |
+| `ansible_role_redhat_insights_compliance_enable` | No | false | Install `openscap-scanner` and `scap-security-guide` to enable compliance functionality. |
+
 
 Example Playbook
 ----------------
