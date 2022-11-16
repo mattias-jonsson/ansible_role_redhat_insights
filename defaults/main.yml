@@ -6,16 +6,39 @@ ansible_role_redhat_insights_authmethod: BASIC
 ansible_role_redhat_insights_username: 
 ansible_role_redhat_insights_password: 
 ansible_role_redhat_insights_base_url: cert-api.access.redhat.com:443/r/insights
-ansible_role_redhat_insights_proxy: 
+ansible_role_redhat_insights_proxy:
 ansible_role_redhat_insights_auto_update: True
 ansible_role_redhat_insights_obfuscate: False
 ansible_role_redhat_insights_obfuscate_hostname: False
-ansible_role_redhat_insights_display_name: 
-ansible_role_redhat_insights_ansible_host: 
+ansible_role_redhat_insights_display_name:
+ansible_role_redhat_insights_ansible_host:
 ansible_role_redhat_insights_cmd_timeout: 120
 ansible_role_redhat_insights_http_timeout: 120
 ansible_role_redhat_insights_core_collect: True
 ansible_role_redhat_insights_redaction_file: /etc/insights-client/file-redaction.yaml
 ansible_role_redhat_insights_content_redaction_file: /etc/insights-client/file-content-redaction.yaml
 ansible_role_redhat_insights_tags_file: /etc/insights-client/tags.yaml
-ansible_role_redhat_insights_enable_malware_scan: False
+ansible_role_redhat_insights_malware_scan_enable: False
+ansible_role_redhat_insights_malware_scan_test_scan: false
+ansible_role_redhat_insights_malware_scan_scan_filesystem: true
+ansible_role_redhat_insights_malware_scan_filesystem_scan_only:
+ansible_role_redhat_insights_malware_scan_filesystem_scan_exclude:
+- /proc
+- /sys
+- /cgroup
+- /selinux
+- /net
+- /mnt
+- /media
+- /dev
+ansible_role_redhat_insights_malware_scan_filesystem_scan_since:
+ansible_role_redhat_insights_malware_scan_exclude_network_filesystem_mountpoints: true
+ansible_role_redhat_insights_malware_scan_network_filesystem_types: [nfs, nfs4, cifs, smbfs, fuse.sshfs, ceph, glusterfs, gfs, gfs2]
+ansible_role_redhat_insights_malware_scan_scan_processes: false
+ansible_role_redhat_insights_malware_scan_processes_scan_only:
+ansible_role_redhat_insights_malware_scan_processes_scan_exclude:
+ansible_role_redhat_insights_malware_scan_processes_scan_since:
+ansible_role_redhat_insights_malware_scan_add_metadata: true
+ansible_role_redhat_insights_malware_scan_scan_timeout: 3600
+ansible_role_redhat_insights_malware_scan_nice_value: 19
+ansible_role_redhat_insights_malware_scan_cpu_thread_limit:
