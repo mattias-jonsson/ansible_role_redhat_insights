@@ -1,0 +1,5 @@
+---
+
+ansible_role_linux_update_packages:
+  -  yara
+  -  insights-client

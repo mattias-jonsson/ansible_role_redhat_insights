@@ -1,0 +1,17 @@
+---
+
+- name: Install Red Hat Insights and required packages on Red Hat Enterprise Linux 7.
+  become: true
+  ansible.builtin.yum:
+    name: "{{ ansible_role_redhat_insights_packages }}"
+    state: present
+    update_cache: yes
+  when: ansible_distribution_major_version < "8"
+
+- name: Install Red Hat Insights and required packages on Red Hat Enterprise Linux 8 or newer.
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ ansible_role_linux_update_packages }}"
+    state: present
+    update_cache: yes
+  when: ansible_distribution_major_version > "7"

@@ -1,0 +1,21 @@
+---
+
+ansible_role_redhat_insights_loglevel: DEBUG
+ansible_role_redhat_insights_auto_config: True
+ansible_role_redhat_insights_authmethod: BASIC
+ansible_role_redhat_insights_username: 
+ansible_role_redhat_insights_password: 
+ansible_role_redhat_insights_base_url: cert-api.access.redhat.com:443/r/insights
+ansible_role_redhat_insights_proxy: 
+ansible_role_redhat_insights_auto_update: True
+ansible_role_redhat_insights_obfuscate: False
+ansible_role_redhat_insights_obfuscate_hostname: False
+ansible_role_redhat_insights_display_name: 
+ansible_role_redhat_insights_ansible_host: 
+ansible_role_redhat_insights_cmd_timeout: 120
+ansible_role_redhat_insights_http_timeout: 120
+ansible_role_redhat_insights_core_collect: True
+ansible_role_redhat_insights_redaction_file: /etc/insights-client/file-redaction.yaml
+ansible_role_redhat_insights_content_redaction_file: /etc/insights-client/file-content-redaction.yaml
+ansible_role_redhat_insights_tags_file: /etc/insights-client/tags.yaml
+ansible_role_redhat_insights_enable_malware_scan: False

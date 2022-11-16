@@ -1,0 +1,57 @@
+# {{ ansible_managed }}
+
+[insights-client]
+
+# Change log level, valid options DEBUG, INFO, WARNING, ERROR, CRITICAL. Default DEBUG
+loglevel={{ ansible_role_redhat_insights_loglevel }}
+
+# Attempt to auto configure with Satellite server
+auto_config={{ ansible_role_redhat_insights_auto_config }}
+
+# Change authentication method, valid options BASIC, CERT. Default BASIC
+authmethod={{ ansible_role_redhat_insights_authmethod }}
+
+# username to use when authmethod is BASIC
+username={{ ansible_role_redhat_insights_username }}
+
+# password to use when authmethod is BASIC
+password={{ ansible_role_redhat_insights_password }}
+
+# Base URL for the Insights API
+base_url={{ ansible_role_redhat_insights_base_url }}
+
+# URL for your proxy.  Example: http://user:pass@192.168.100.50:8080
+proxy={{ ansible_role_redhat_insights_proxy }}
+
+# Automatically update the dynamic configuration
+auto_update={{ ansible_role_redhat_insights_auto_update }}
+
+# Obfuscate IP addresses
+obfuscate={{ ansible_role_redhat_insights_obfuscate }}
+
+# Obfuscate hostname. Requires obfuscate=True.
+obfuscate_hostname={{ ansible_role_redhat_insights_obfuscate_hostname }}
+
+# Display name for registration
+display_name={{ ansible_role_redhat_insights_display_name }}
+
+# Ansible hostname for this system
+ansible_host={{ ansible_role_redhat_insights_ansible_host }}
+
+# Timeout for commands run during collection, in seconds
+cmd_timeout={{ ansible_role_redhat_insights_cmd_timeout }}
+
+# Timeout for HTTP calls, in seconds
+http_timeout={{ ansible_role_redhat_insights_http_timeout }}
+
+# Use insights-core as the collection source. Included for compatibility only. Modify only as directed.
+core_collect={{ ansible_role_redhat_insights_core_collect }}
+
+# Location of the redaction file for commands, files, and components
+redaction_file={{ ansible_role_redhat_insights_redaction_file }}
+
+# Location of the redaction file for patterns and keywords
+content_redaction_file={{ ansible_role_redhat_insights_content_redaction_file }}
+
+# Location of the tags file for this system
+tags_file={{ ansible_role_redhat_insights_content_redaction_file }}
