@@ -1,5 +1,10 @@
 ---
 
-ansible_role_linux_update_packages:
+ansible_role_redhat_insights_packages:
   -  yara
   -  insights-client
+
+ansible_role_redhat_insights_services:
+  - insights-client-results.path
+  - insights-client-boot.service
+  - insights-client.timer
