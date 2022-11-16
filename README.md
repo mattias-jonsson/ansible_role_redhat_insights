@@ -5,6 +5,8 @@ Handles installation and configuration of Red Hat Insights agent.
   
 This role is inspired and also contains the insights_facts file from https://github.com/RedHatInsights/insights-client-role.
 
+Supported distributions:
+
 <ul>
 <li>Red Hat Enterprise Linux 7
 <li>Red Hat Enterprise Linux 8
