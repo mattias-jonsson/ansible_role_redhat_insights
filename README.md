@@ -64,7 +64,7 @@ Example Playbook
       vars:
         ansible_role_redhat_insights_display_name: testvm
         ansible_role_redhat_insights_ansible_host: testvm
-        ansible_role_redhat_insights_malware_scan_enable: True
+        ansible_role_redhat_insights_malware_scan_enable: true
 
       roles:
          - ansible_role_redhat_insights
