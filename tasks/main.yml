@@ -4,17 +4,19 @@
   ansible.builtin.assert:
     that:
       - ansible_distribution == "RedHat"
-      - ansible_distribution_major_version == "7" or ansible_distribution_major_version == "8" or ansible_distribution_major_version == "9" 
+      - ansible_distribution_major_version == "7" or ansible_distribution_major_version == "8" or ansible_distribution_major_version == "9"
     msg: "This role only support Red Hat Enterprise Linux versions 7/8/9"
 
 - name: Include variables specific for the distribution.
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_items:
     - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
 
 - name: Get Red Hat subscription details.
   become: true
-  ansible.builtin.shell: subscription-manager list --consumed | sed -n 's/^Status Details:\s*\(Subscription is current\)$/\1/p'
+  ansible.builtin.shell: >
+    set -o pipefail && \
+      subscription-manager list --consumed | sed -n 's/^Status Details:\s*\(Subscription is current\)$/\1/p'
   register: rhel_subscription_check
   retries: 5
   delay: 5
@@ -22,12 +24,16 @@
 
 - name: Assert that Red Hat subscription is current.
   ansible.builtin.assert:
-    that: 
+    that:
       - rhel_subscription_check.stdout == "Subscription is current"
     msg: "Check Red Hat subscription."
 
-- include_tasks: install.yml
-- include_tasks: configure.yml
+- name: Include install tasks.
+  ansible.builtin.include_tasks:
+    file: install.yml
+- name: Include configure tasks.
+  ansible.builtin.include_tasks:
+    file: configure.yml
 
 # - name: Performs a compliance scan and upload result to Red Hat Insights.
 #   become: true

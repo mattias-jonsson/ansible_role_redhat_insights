@@ -4,17 +4,17 @@
   become: true
   ansible.builtin.service:
     name: '{{ item }}'
-    enabled: yes
+    enabled: true
   loop: '{{ ansible_role_redhat_insights_services }}'
 
 - name: Test Red Hat Insights agent connection.
   become: true
-  command: insights-client --test-connection
+  ansible.builtin.command: insights-client --test-connection
   changed_when: false
 
 - name: Create a directory for Ansible custom facts.
   become: true
-  file:
+  ansible.builtin.file:
     state: directory
     recurse: true
     path: /etc/ansible/facts.d
@@ -23,7 +23,7 @@
 
 - name: Install the custom insights fact.
   become: true
-  copy:
+  ansible.builtin.copy:
     src: insights.fact
     dest: /etc/ansible/facts.d
     owner: root
@@ -42,7 +42,7 @@
 
 - name: Test Red Hat Insights agent status.
   become: true
-  command: insights-client --status
+  ansible.builtin.command: insights-client --status
   register: insights_status
   changed_when: false
   failed_when:
@@ -55,17 +55,17 @@
     path: /etc/insights-client/.unregistered
   register: unregsitered_check
   failed_when:
-    - unregsitered_check.stat.exists 
+    - unregsitered_check.stat.exists
     - insights_status.rc != 1
 
 - name: Register on Red Hat Insights.
   become: true
-  command: insights-client --register
+  ansible.builtin.command: insights-client --register
   when: unregsitered_check.stat.exists
 
 - name: Upload data to Red Hat Insights.
   become: true
-  command: insights-client
+  ansible.builtin.command: insights-client
   when: unregsitered_check.stat.exists
 
 - name: Create malware-detection-config.yml from template.

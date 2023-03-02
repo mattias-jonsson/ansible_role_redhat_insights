@@ -2,20 +2,20 @@
 
 - name: Unregister from Red Hat Insights.
   become: true
-  command: insights-client --unregister
+  ansible.builtin.command: insights-client --unregister
   listen: "reregister of Red Hat Insights"
 
 - name: Register on Red Hat Insights.
   become: true
-  command: insights-client --register
+  ansible.builtin.command: insights-client --register
   listen: "reregister of Red Hat Insights"
 
 - name: Upload data to Red Hat Insights.
   become: true
-  command: insights-client
+  ansible.builtin.command: insights-client
   listen: "reregister of Red Hat Insights"
 
 - name: Performs a test scan and upload the results to Red Hat insights.
   become: true
-  command: insights-client --collector malware-detection
+  ansible.builtin.command: insights-client --collector malware-detection
   listen: "testscan and upload to Red Hat Insights"

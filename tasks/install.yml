@@ -5,7 +5,7 @@
   ansible.builtin.yum:
     name: "{{ item | select }}"
     state: present
-    update_cache: yes
+    update_cache: true
   loop:
     - "{{ ansible_role_redhat_insights_packages }}"
   when: ansible_distribution_major_version < "8"
@@ -15,7 +15,7 @@
   ansible.builtin.dnf:
     name: "{{ item | select }}"
     state: present
-    update_cache: yes
+    update_cache: true
   loop:
     - "{{ ansible_role_redhat_insights_packages }}"
   when: ansible_distribution_major_version > "7"

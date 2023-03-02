@@ -6,12 +6,12 @@ collections:
 galaxy_info:
   author: Mattias Jonsson
   description: An Ansible role that handles installation and configuration of Red Hat Insights agents on supported distributions.
-  min_ansible_version: 2.9.27
+  min_ansible_version: 2.13.0
   role_name: ansible_role_redhat_insights
   license: MIT
   platforms:
-  - name: EL
-    versions:
-    - "7"
-    - "8"
-    - "9"
+    - name: EL
+      versions:
+        - "7"
+        - "8"
+        - "9"

@@ -1,8 +1,8 @@
 ---
 
 ansible_role_redhat_insights_packages:
-  -  yara
-  -  insights-client
+  - yara
+  - insights-client
   - "{{ 'openscap-scanner' if ansible_role_redhat_insights_compliance_enable else '' }}"
   - "{{ 'scap-security-guide' if ansible_role_redhat_insights_compliance_enable else '' }}"
 
